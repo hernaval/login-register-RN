@@ -9,6 +9,10 @@ export {default as Panier} from "./client/Panier"
 export {default as Notifications} from "./client/Notifications"
 export {default as Commande } from "./client/Commande"
 
+export {default as ChoixPizzeria} from "./client/ChoixPizzeria"
+export {default as ChoixPizza} from "./client/ChoixPizza"
+export {default as ChoixPanier} from "./client/ChoixPanier"
+export {default as ChoixCommander} from "./client/ChoixCommander"
 
 export {default as LoginPrestataire} from "./prestataire/LoginPrestataire"
 export {default as RegisterPrestataire} from "./prestataire/RegisterPrestataire"

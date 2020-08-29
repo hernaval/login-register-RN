@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { View, Text, ImageBackground, StyleSheet } from 'react-native'
+import { View, Text, ImageBackground, StyleSheet,TouchableOpacity } from 'react-native'
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -17,36 +17,48 @@ const HomeScreen = ({ navigation }) => {
                     <Text style={{color : "#EDF514",margin  : 3,fontSize : 22}}>REUNION</Text>
                 </View>
 
-                <View style={[styles.cardContainer, {
+                <TouchableOpacity style={[styles.cardContainer, {
                     backgroundColor: "#046504", opacity: 0.75,
                     width: wp('90%'),
                     marginBottom : hp("1%")
-                }]}>
+                }]}
+                // onPress={()=>navigation.navigate("LoginScreen",{express :false, isNewCli : false})} 
+                onPress={()=>navigation.navigate("ChoixPizzeria") }
+                >
+
+                
                     <Avatar.Image size={70} source={require("../../assets/assietePizza.png")} />
                     <Text style={styles.label}>COMMANDER VOTRE PIZZA</Text>
                     <Text style={[styles.label,{fontSize : 10,margin : 2}]}>Sélectionnez votre pizzeria parmi nos nombreux partenaires</Text>
-                    <Button onPress={()=>navigation.navigate("LoginScreen",{express :false, isNewCli : false})} labelStyle={{fontSize : 11}} mode="contained">Commander maintenant</Button>
-                </View>
+               
+                </TouchableOpacity>
+
+                
 
                 <View style={{ flexDirection: "row" }}>
-                    <View style={[styles.cardContainer, {
+                    <TouchableOpacity style={[styles.cardContainer, {
                         backgroundColor: "#A20F0F", opacity: 0.75,
-                        width: wp('45%'),
-                    }]}>
+                        width: wp('45%') }]}
+                        onPress={()=> navigation.navigate("LoginScreen",{express : true, isNewCli : false})}
+                   >
+                   
                         <Avatar.Image size={70} source={require("../../assets/assietePizza.png")} />
                         <Text style={styles.label}>COMMANDE EXPRESS</Text>
                        
-                        <Button onPress={()=> navigation.navigate("LoginScreen",{express : true, isNewCli : false})} labelStyle={{fontSize : 11}} mode="contained">Allons-Y</Button>
-                    </View>
-                    <View style={[styles.cardContainer, {
+                   
+                    </TouchableOpacity>
+
+                    <TouchableOpacity style={[styles.cardContainer, {
                         backgroundColor: "#10AC9D", opacity: 0.75,
-                        width: wp('45%'),
-                    }]}>
+                        width: wp('45%')
+                    }]}
+                    onPress={()=>navigation.navigate("LoginPrestataire")}>
                         <Avatar.Image size={70} source={require("../../assets/assietePizza.png")} />
                         <Text style={styles.label}>PARTENARIAT</Text>
                      
-                        <Button onPress={()=>navigation.navigate("LoginPrestataire")} labelStyle={{fontSize : 11}} mode="contained">Rejoignez</Button>
-                    </View>
+                    </TouchableOpacity>
+                    
+                  
                 </View>
 
             </View>

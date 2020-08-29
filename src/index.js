@@ -15,7 +15,10 @@ import {
     Panier,
     Notifications,
     Commande,
-
+    ChoixPizzeria,
+    ChoixPizza,
+    ChoixPanier,
+    ChoixCommander,
     LoginPrestataire,
     RegisterPrestataire,
     RegisterDone,
@@ -44,7 +47,11 @@ const Router = createStackNavigator({
     Panier,
     Notifications,
     Commande,
-
+    ChoixPizzeria,
+    ChoixPizza,
+    ChoixPanier,
+    ChoixCommander,
+    
     LoginPrestataire,
     RegisterPrestataire,
     RegisterDone,

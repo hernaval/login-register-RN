@@ -18,10 +18,10 @@ export const addToPanier = async({Code_produit,id_client,Num_prestataire}) =>{
     return response
 }
 
- export const commander = async(paniers,ref,date_recep,heure_recep,mode_paiement,qt) =>{
+ export const commander = async(paniers,ref,date_recep,heure_recep,mode_paiement,qt,postale) =>{
      let response = ""
     let panier = {
-        paniers,ref,date_recep,heure_recep,mode_paiement,qt
+        paniers,ref,date_recep,heure_recep,mode_paiement,qt,postale
     }
     //console.log(data)
       await axios.post(`${API_URL}/client/commande.php`,

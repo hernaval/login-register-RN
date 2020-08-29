@@ -18,6 +18,19 @@ export const currentPrestataire = async () => {
     return prestataire
 }
 
+export const getDate = async (key) =>{
+  try {
+    let value = await AsyncStorage.getItem(key);
+
+    return value
+  } catch (error) {
+   
+    // Error saving data
+  }
+}
+export const getAllKey = async () =>{
+  return await AsyncStorage.getAllKeys()
+}
 export const storeDate = async (key,value) =>{
     try {
         await AsyncStorage.setItem(key, value);
@@ -25,4 +38,12 @@ export const storeDate = async (key,value) =>{
        
         // Error saving data
       }
+}
+
+export const remoteDate = async(key) =>{
+  await AsyncStorage.removeItem(key)
+}
+
+export const clearAll = async () =>{
+  await AsyncStorage.clear()
 }

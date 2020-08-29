@@ -2,9 +2,9 @@ import {API_URL } from "../../core/config"
 import axios from "axios"
 import qs from "qs"
 
-export const allPrestataire = async() =>{
+export const allPrestataire = async(code) =>{
     let response = []
-    await axios.get(`${API_URL}/client/prestataire.php`)
+    await axios.get(`${API_URL}/client/prestataire.php?codePostal=${code}`)
     .then(async(res) => response = res.data)
    
     return response
@@ -19,6 +19,7 @@ export const pizzaByPrestataire = async(numPrestataire) => {
 
     return response
 }
+
 
 export const panierClient =async (id_client,Num_prestataire) =>{
     let response = []

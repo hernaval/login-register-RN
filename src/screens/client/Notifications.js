@@ -84,15 +84,21 @@ class Notifications extends Component {
         return (
 
             <ImageBackground
-                source={require("../../../assets/loginBg.jpg")}
+                source={require("../../../assets/large2.jpg")}
                 style={{ flex: 1, width: "100%" }}
             >
                 {this.state.isLoading && <View style={styles.loading_container}>
                     <ActivityIndicator size="large" />
                 </View>}
-                <View>
-                    <TopMenu title="Home" navigation={this.props.navigation} />
+
+                
+
+                <View style={{margin : 10}}
+                >
+                    <Text style={styles.sellers}>MES PANIERS</Text>
+                    <View style={styles.divider}></View>
                 </View>
+                
                 <View style={{ flex: 1, padding: 20, justifyContent: "center" }}>
                     <View style={{ flexDirection: "column", alignItems: "center" }}>
                         <Image
@@ -127,6 +133,9 @@ class Notifications extends Component {
 
                 </View>
 
+                <View>
+                    <TopMenu   />
+                </View>
 
             </ImageBackground>
 
@@ -144,6 +153,17 @@ const styles = StyleSheet.create({
         bottom: 0,
         alignItems: 'center',
         justifyContent: 'center'
-    }
+    },
+
+    sellers : {
+        color : "#ffff",
+        opacity : 0.7,
+        fontSize : 20,
+        
+    },
+    divider : {
+        borderTopWidth : 1,
+        borderTopColor : "#fff"
+    },
 })
 export default memo(Notifications)

@@ -63,3 +63,14 @@ export const motDePasseOublie = async(email) =>{
 
     return response
 }
+
+
+export const isUserExist = async(email) =>{
+    let response = ""
+
+    await axios.get(`${API_URL}/client/verifyUser.php?email=${email}`)
+        .then(async res => response = res.data)
+        .catch(err =>  console.log(err))
+
+    return response
+}

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet,Image,TouchableOpacity } from 'react-native'
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import { faHome,  faBars, faTimes, faCaretDown, faEdit ,faCog, faSignOutAlt} from '@fortawesome/free-solid-svg-icons';
+import { faHome,  faBars, faTimes, faCaretDown, faEdit ,faCog, faSignOutAlt, faArrowRight, faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {
     widthPercentageToDP as wp,
     heightPercentageToDP as hp,
@@ -12,35 +12,19 @@ export default class TopMenu extends Component {
             <React.Fragment>
                 <View style={styles.under}>
                         
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate("Dashboard")}  >
+                    <TouchableOpacity style={styles.userBtn} onPress={() => this.props.navigation.goBack()}  >
                     <FontAwesomeIcon 
                          
-                         icon={faHome} 
+                         icon={faArrowLeft} 
                          color="white" 
                          size={24} 
                          style={{}} />
                     
-                  
+                    <Text style={styles.precedent}>PRECEDENT</Text>
                     </TouchableOpacity>
                      
-                   <View style={{flexDirection :"row"}}>
-
-                       <Image
-                        style={{width: wp('6%'), height: wp('6%'), backgroundColor: 'white',  borderRadius: 400/2, marginRight: wp('2%'),marginTop : hp("1%")}}
-                        source={require('../../assets/assietePizza.png')}
-                    />
                    
-        <Text   style={styles.title1}>{this.props.title}</Text> 
-
-                    </View>
-
-                    <TouchableOpacity onPress={()=> this.props.navigation.navigate("HomeScreen")}>
-                        <FontAwesomeIcon color ="white" size={24} icon={faSignOutAlt} />
-                    </TouchableOpacity>
-                     
- 
-                    
-                    </View>
+                </View>
       
             </React.Fragment>
         )
@@ -49,16 +33,27 @@ export default class TopMenu extends Component {
 
 const styles = StyleSheet.create({
     under: {
-        backgroundColor : "#F6820D",
-        flexDirection: 'row',
-        paddingTop: hp("3%"),
-        width: wp('100%'),
+        backgroundColor : "#d3d3d3",
+       opacity : 0.95,
+        padding: hp("3%"),
+        width: wp('50%'),
         textAlign: 'center',
         alignItems: 'center',
         justifyContent: 'space-around',
-       
+       marginBottom : 20,
+       marginLeft : 20,
+       borderRadius : 5
         
     },
+    userBtn : {
+        flexDirection : "row"
+    },
+    precedent : {
+        marginLeft : 5,
+        letterSpacing : 2,
+        fontWeight : "bold",
+        color : "#fff"
+    },  
     title1: {
         fontSize: 26,
         color: "white",
